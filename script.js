@@ -39,16 +39,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Displaying Feedback
-        feedbackDiv.style.display('block');
+        feedbackDiv.style.display = 'block';
 
         if(isValid = true){
             feedbackDiv.textContent('Registration successful!');
-            feedbackDiv.style.color('#28a745');
+            feedbackDiv.style.color = '#28a745';
         }
         else{
             feedbackDiv.innerHTML(messages.join("<br>"));
-            feedbackDiv.style.color('#dc3545');
+            feedbackDiv.style.color = '#dc3545';
         }
+
+        // If all validations pass, submit the form
+        form.submit();
     });
 
 });
