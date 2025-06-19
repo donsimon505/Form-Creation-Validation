@@ -43,10 +43,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if(isValid = true){
             feedbackDiv.textContent('Registration successful!');
-            feedbackDiv.style.color('#28a745');
         }
         else{
-            feedbackDiv.innerHTML(`${username.textContent}<br>${email.textContent}<br>${password.textContent}`);
+            feedbackDiv.innerHTML(messages.join("<br>"));
+            feedbackDiv.style.color('#28a745');
         }
     });
 
