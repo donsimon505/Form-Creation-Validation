@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = document.getElementById('password').value.trim();
 
         let isValid = true;
-        const messages = ['Username is less than 3 characters', 'Email does not meet requirement', 'Password is less than 8 character'];
+        const messages = [];
 
         if(username.length < 3){
             isValid = false;
-            username.textContent = messages[0];
+            username.textContent = messages.push('Username less than 3 characters');
         }
         else{
             username.textContent = '';
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(email)){
             isValid = false;
-            email.textContent = messages[1];
+            email.textContent = messages.push('Email not meeting requirements');
         }
         else{
             email.textContent = '';
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if(password.length >= 8){
             isValid = false;
-            password.textContent = messages[2];
+            password.textContent = messages.push('Password less than 8 characters');
         }
         else{
             password.textContent = '';
